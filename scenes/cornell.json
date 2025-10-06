@@ -17,16 +17,43 @@
             "TYPE":"Diffuse",
             "RGB":[0.85, 0.35, 0.35]
         },
+        "diffuse_pink":
+        {
+            "TYPE":"Diffuse",
+            "RGB":[0.89, 0.47, 0.76]
+        },
         "diffuse_green":
         {
             "TYPE":"Diffuse",
             "RGB":[0.35, 0.85, 0.35]
+        },
+        "diffuse_blue":
+        {
+            "TYPE":"Diffuse",
+            "RGB":[0.12, 0.47, 0.71]
+        },
+        "diffuse_orange":
+        {
+            "TYPE":"Diffuse",
+            "RGB":[0.98, 0.50, 0.05]
         },
         "specular_white":
         {
             "TYPE":"Specular",
             "RGB":[0.98, 0.98, 0.98],
             "ROUGHNESS":0.0
+        },
+        "glass":
+        {
+            "TYPE":"Dielectric",
+            "RGB":[1.0, 1.0, 1.0],
+            "IOR":2.0
+        },
+        "bubble":
+        {
+            "TYPE":"Dielectric",
+            "RGB":[1.0, 1.0, 1.0],
+            "IOR":0.5
         }
     },
     "Camera":
@@ -65,14 +92,14 @@
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_white",
+            "MATERIAL":"diffuse_pink",
             "TRANS":[0.0,5.0,-5.0],
             "ROTAT":[0.0,90.0,0.0],
             "SCALE":[0.01,10.0,10.0]
         },
         {
             "TYPE":"cube",
-            "MATERIAL":"diffuse_red",
+            "MATERIAL":"specular_white",
             "TRANS":[-5.0,5.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
             "SCALE":[0.01,10.0,10.0]
@@ -87,9 +114,30 @@
         {
             "TYPE":"sphere",
             "MATERIAL":"specular_white",
-            "TRANS":[-1.0,4.0,-1.0],
+            "TRANS":[-2.0,3.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[3.0,3.0,3.0]
+            "SCALE":[3.5,3.5,3.5]
+        },
+        {
+            "TYPE":"sphere",
+            "MATERIAL":"diffuse_blue",
+            "TRANS":[1.5,7.0,-2.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[3.5,3.5,3.5]
+        },
+        {
+            "TYPE":"sphere",
+            "MATERIAL":"glass",
+            "TRANS":[2.0,3.0,1.0],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[3.5,3.5,3.5]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"glass",
+            "TRANS":[-2.0,7.0,1.0],
+            "ROTAT":[0.0,40.0,0.0],
+            "SCALE":[2.0,2.0,2.0]
         }
     ]
 }

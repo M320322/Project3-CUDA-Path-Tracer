@@ -15,6 +15,20 @@
 #define SQRT_OF_ONE_THIRD 0.5773502691896257645091487805019574556476f
 #define EPSILON           0.00001f
 
+#define SORT_MATERIALS 1
+#define ANTIALIASING 0
+#define RUSSIAN_ROULETTE 0
+
+#define DEPTH_OF_FIELD 0
+#define LENS_RADIUS 1.0f
+#define FOCAL_Z -1.5f
+
+#define DIRECT_LIGHTING 0
+#define DIRECT_LIGHTING_SCALE 0.1f
+
+#define MC_RANDOM_TYPE 0
+#define SAMPLES_PER_PIXEL 1
+
 class GuiDataContainer
 {
 public:
