@@ -5,7 +5,7 @@
         {
             "TYPE":"Emitting",
             "RGB":[1.0, 1.0, 1.0],
-            "EMITTANCE":5.0
+            "EMITTANCE":7.0
         },
         "diffuse_white":
         {
@@ -74,7 +74,7 @@
             "MATERIAL":"light",
             "TRANS":[0.0,10.0,0.0],
             "ROTAT":[0.0,0.0,0.0],
-            "SCALE":[3.0,0.3,3.0]
+            "SCALE":[3.0,0.3,7.0]
         },
         {
             "TYPE":"cube",
@@ -138,6 +138,48 @@
             "TRANS":[-2.0,7.0,1.0],
             "ROTAT":[0.0,40.0,0.0],
             "SCALE":[2.0,2.0,2.0]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"light",
+            "TRANS":[-1.5,2.5,4.75],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.5,1.0,0.5]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_white",
+            "TRANS":[-1.5,1.0,4.75],
+            "ROTAT":[0.0,0.0,0.0],
+            "SCALE":[0.5,2.0,0.5]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_pink",
+            "TRANS":[-3.0,0.87,3.0],
+            "ROTAT":[45.0,45.0,0.0],
+            "SCALE":[1.0,1.0,1.0]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"specular_white",
+            "TRANS":[-1.0,0.87,3.0],
+            "ROTAT":[45.0,45.0,0.0],
+            "SCALE":[1.0,1.0,1.0]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"diffuse_orange",
+            "TRANS":[1.0,0.87,3.0],
+            "ROTAT":[45.0,45.0,0.0],
+            "SCALE":[1.0,1.0,1.0]
+        },
+        {
+            "TYPE":"cube",
+            "MATERIAL":"glass",
+            "TRANS":[3.0,0.87,3.0],
+            "ROTAT":[45.0,45.0,0.0],
+            "SCALE":[1.0,1.0,1.0]
         }
     ]
 }

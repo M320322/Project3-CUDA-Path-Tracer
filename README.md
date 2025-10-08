@@ -13,7 +13,7 @@
 
 This project implements a GPU path tracer written in CUDA that renders images. The implementation focuses on both visual correctness and GPU performance. The tracer supports multiple sampling strategies and a thin-lens camera model for depth-of-field.
 
-<img src="img/orig.png" alt="Base render" width="320"/>
+<img src="img/cover.png" alt="Base render" width=80%/>
 
 ## Features
 
@@ -22,7 +22,7 @@ This project implements a GPU path tracer written in CUDA that renders images. T
 - Diffuse (Lambertian): cosine-weighted hemisphere sampling with albedo-based BRDF.
 - Specular reflectance: perfect mirror reflection for specular materials.
 
-<img src="img/orig.png" alt="Base render" width="320"/>
+<img src="img/orig.png" alt="Base render" width=80%/>
 
 ### 2) Intersections sorted by material
 
@@ -54,7 +54,7 @@ Antialiasing is performed by jittering sample positions within each pixel across
 
 Dielectric materials use Snell's law to compute transmission directions and Schlick's approximation for Fresnel reflectance. Total internal reflection is handled explicitly.
 
-<img src="img/orig.png" alt="Base render" width="320"/>
+<img src="img/orig.png" alt="Base render" width=80%/>
 
 ### 6) Depth-of-field (customizable aperture & focus distance)
 
@@ -93,16 +93,22 @@ Supported 2D random number generators: uniform, purely random, jittered, Halton,
 
 Representative performance numbers measured on the development machine (scene dependent):
 
+<img src="img/performance.png" alt="Performance" width=80%/>
+
 - Baseline (no extra features): 12.0 FPS
 - With Russian roulette enabled: 13.1 FPS
 - With Direct Lighting enabled: 10.8 FPS (extra kernel invocation for direct lighting visibility computations)
 
-Observations:
-- Sorting intersections by material reduced memory stalls in the shading kernel.
-- Stream compaction significantly reduces traced rays in later bounces, improving throughput; however, the relative benefit depends on scene complexity and depth distribution.
-- Direct lighting increases image quality but requires additional computation; use it when higher fidelity is required.
+Discussions:
+- Sorting intersections by material did reduced memory stalls in the shading kernel, but the speed improvement was cancelled out by the additional sorting process, yielding no performance improvement overall.
+- Stream compaction reduces traced rays in later bounces, improving throughput; however, the relative benefit depends on scene complexity and depth distribution.
+- Direct lighting increases light directionality visuals but requires additional computation; use it when higher fidelity is required.
 
 ## Bloopers
+
+<img src="img/blooper.png" alt="Blooper" width=80%/>
+
+This is what happens when inner/outer surface determination is flipped during refraction handling. Inner surfaces are treated as outer surfaces, and vice versa. This only impacted the dielectric material object (in the figure above, the rightmost sphere and cube). Those objects are partially specular and partially "diffusive" to darkness. Thus, an interesting and complex pattern is created when external and internal interactions are flipped.
 
 ## References and Acknowledgements
 
